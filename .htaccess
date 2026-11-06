@@ -1,0 +1,3 @@
+# Custom 404 page and safe defaults
+ErrorDocument 404 /sweetbite/404.php
+Options -Indexes

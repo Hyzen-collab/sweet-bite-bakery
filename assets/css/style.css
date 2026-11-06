@@ -1,0 +1,232 @@
+/* =========================================================
+   Sweet Bite Bakery - main stylesheet
+   Light custom styling on top of Bootstrap 5
+   ========================================================= */
+
+/* ---------- Colours (taken from the logo) ---------- */
+:root {
+    --brown: #6b3e26;
+    --brown-dark: #4a2916;
+    --pink: #c2185b;
+    --pink-dark: #a01049;
+    --cream: #fbf1e4;
+    --text: #222222;
+}
+
+/* ---------- Basics ---------- */
+body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+    background: #fffdfa;
+}
+
+h1, h2, h3, h4, h5 {
+    color: var(--brown);
+    font-weight: 700;
+}
+
+a { color: var(--pink); }
+a:hover { color: var(--pink-dark); }
+
+img { max-width: 100%; }
+
+.section { padding: 3.5rem 0; }
+.section-cream { background: var(--cream); }
+
+.section-title { text-align: center; margin-bottom: 2.2rem; }
+.section-title h2 { position: relative; display: inline-block; padding-bottom: .6rem; }
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    left: 25%; right: 25%; bottom: 0;
+    height: 3px;
+    background: var(--pink);
+    border-radius: 3px;
+}
+.section-title p { color: #6c6c6c; margin-top: .6rem; }
+
+/* ---------- Buttons ---------- */
+.btn-brand,
+.btn-pink {
+    color: #fff;
+    border: 0;
+    border-radius: 50px;
+    padding: .55rem 1.4rem;
+    font-weight: 600;
+}
+.btn-brand { background: var(--brown); }
+.btn-brand:hover, .btn-brand:focus { background: var(--brown-dark); color: #fff; }
+.btn-pink { background: var(--pink); }
+.btn-pink:hover, .btn-pink:focus { background: var(--pink-dark); color: #fff; }
+.btn-outline-brand {
+    border: 2px solid var(--brown);
+    color: var(--brown);
+    border-radius: 50px;
+    font-weight: 600;
+}
+.btn-outline-brand:hover { background: var(--brown); color: #fff; }
+
+/* ---------- Top banner and navigation ---------- */
+.announcement {
+    background: var(--pink);
+    color: #fff;
+    font-size: .9rem;
+}
+
+.site-nav {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+}
+.site-nav .navbar-brand {
+    color: var(--brown);
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+.site-nav .nav-link { color: var(--brown); font-weight: 600; }
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active { color: var(--pink); }
+
+/* ---------- Home page hero ---------- */
+.hero {
+    background: linear-gradient(90deg, rgba(251, 241, 228, .96) 35%, rgba(251, 241, 228, .1)),
+                url("../images/hero.jpg") center / cover no-repeat;
+    padding: 5rem 0;
+}
+.hero h1 { font-size: 2.6rem; }
+.hero p.lead { max-width: 480px; color: #4a4a4a; }
+
+.page-header {
+    background: var(--cream);
+    padding: 2.5rem 0;
+    border-bottom: 3px solid var(--pink);
+    margin-bottom: 2.5rem;
+}
+.page-header h1 { margin: 0; }
+.page-header p { margin: .4rem 0 0; color: #6c6c6c; }
+
+/* ---------- Cards ---------- */
+.product-card {
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, .08);
+    transition: transform .2s, box-shadow .2s;
+}
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(0, 0, 0, .14); }
+.product-card img { aspect-ratio: 4 / 3; object-fit: cover; }
+.price { color: var(--pink); font-weight: 700; }
+.badge-soft { background: var(--cream); color: var(--brown); font-weight: 600; }
+
+.category-tile {
+    display: block;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.category-tile img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; transition: transform .3s; }
+.category-tile:hover img { transform: scale(1.06); }
+.category-tile span {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: .7rem;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(transparent, rgba(60, 30, 15, .85));
+}
+
+.feature-box {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.6rem;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, .06);
+}
+.feature-box .icon {
+    width: 58px; height: 58px;
+    line-height: 58px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    background: var(--cream);
+    color: var(--pink);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.review-card {
+    background: #fff;
+    border-left: 4px solid var(--pink);
+    border-radius: 10px;
+    padding: 1.2rem;
+    height: 100%;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, .06);
+}
+.stars { color: #f5a623; letter-spacing: 2px; }
+
+/* ---------- Gallery ---------- */
+.gallery-item { cursor: pointer; border-radius: 12px; overflow: hidden; position: relative; }
+.gallery-item img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; transition: transform .3s; }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item .caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: .5rem .8rem;
+    font-size: .9rem; color: #fff;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .7));
+}
+
+/* ---------- Forms and tables ---------- */
+.form-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.8rem;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .08);
+}
+.form-label { font-weight: 600; color: var(--brown); }
+.form-control:focus, .form-select:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 .2rem rgba(194, 24, 91, .15);
+}
+.required::after { content: " *"; color: var(--pink); }
+
+.price-table thead { background: var(--brown); color: #fff; }
+.accordion-button:not(.collapsed) { background: var(--cream); color: var(--brown); }
+
+.hours-box { background: var(--cream); border-radius: 12px; padding: 1.2rem; }
+
+/* ---------- Footer and floating buttons ---------- */
+.site-footer { background: var(--brown-dark); color: #f3e6d8; }
+.site-footer h3 { color: #fff; }
+.site-footer a { color: #ffd9e6; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.footer-links li { margin-bottom: .3rem; }
+
+.whatsapp-float {
+    position: fixed;
+    right: 18px; bottom: 18px;
+    width: 56px; height: 56px;
+    display: flex; align-items: center; justify-content: center;
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    z-index: 1000;
+}
+.back-to-top {
+    position: fixed;
+    right: 24px; bottom: 86px;
+    width: 42px; height: 42px;
+    border: 0; border-radius: 50%;
+    background: var(--brown); color: #fff;
+    font-size: 1.2rem;
+    display: none;
+    z-index: 1000;
+}
+.back-to-top.show { display: block; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 767px) {
+    .hero { padding: 3rem 0; background: linear-gradient(rgba(251, 241, 228, .93), rgba(251, 241, 228, .93)), url("../images/hero.jpg") center / cover; }
+    .hero h1 { font-size: 2rem; }
+    .section { padding: 2.5rem 0; }
+}
